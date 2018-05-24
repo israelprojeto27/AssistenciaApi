@@ -1,0 +1,35 @@
+{
+  "name": "ItemCesta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nomeProduto": {
+      "type": "string",
+      "required": true
+    },
+    "quantidade": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "unidadeProduto": {
+      "type": "string",
+      "required": true
+    },
+    "dataCadastro": {
+      "type": "date",
+      "required": true
+    },
+    "dataUltimaAtualizacao": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

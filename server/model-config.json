@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Usuario": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "Produto": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "PessoaRecebimentoCesta": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "ItemCesta": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "Financeiro": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "TipoProduto": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "Celula": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "ItemPessoaCesta": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  }
+}

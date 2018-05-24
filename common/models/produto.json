@@ -1,0 +1,36 @@
+{
+  "name": "Produto",
+  "plural": "produtos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "quantidade": {
+      "type": "number"
+    },
+    "dataValidade": {
+      "type": "date"
+    },
+    "dataCadastro": {
+      "type": "date",
+      "required": true
+    },
+    "idTipoProduto": {
+      "type": "number"
+    },
+    "acao": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

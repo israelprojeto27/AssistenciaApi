@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "assistenciaDS": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "assistencia",
+    "password": "admin",
+    "name": "assistenciaDS",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

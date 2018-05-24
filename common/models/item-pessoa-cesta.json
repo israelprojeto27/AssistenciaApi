@@ -1,0 +1,44 @@
+{
+  "name": "ItemPessoaCesta",
+  "plural": "itemPessoasCestas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dataRecebimento": {
+      "type": "date",
+      "required": true
+    },
+    "idMembroResponsavel": {
+      "type": "number",
+      "required": true
+    },
+    "idPessoaRecebimentoCesta": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pessoaRecebimentoCesta": {
+      "type": "belongsTo",
+      "model": "PessoaRecebimentoCesta",
+      "foreignKey": "idPessoaRecebimentoCesta",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "idMembroResponsavel",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

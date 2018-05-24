@@ -1,0 +1,51 @@
+{
+  "name": "Financeiro",
+  "plural": "financeiros",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "acao": {
+      "type": "string",
+      "required": true
+    },
+    "dataAcao": {
+      "type": "date",
+      "required": true
+    },
+    "valor": {
+      "type": "number",
+      "required": true
+    },
+    "motivo": {
+      "type": "string"
+    },
+    "dataCadastro": {
+      "type": "date",
+      "required": true
+    },
+    "dataUltimaAtualizacao": {
+      "type": "date",
+      "required": true
+    },
+    "idMembroResponsavel": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "idMembroResponsavel",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
