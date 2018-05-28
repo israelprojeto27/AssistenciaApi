@@ -1,45 +1,48 @@
 /* tslint:disable */
 import {
+  Usuario,
   Produto
 } from '../index';
 
 declare var Object: any;
-export interface ItemCestaInterface {
-  "quantidade": number;
-  "unidadeProduto": string;
-  "dataCadastro": Date;
-  "dataUltimaAtualizacao": Date;
-  "idProduto": number;
+export interface HistoricoProdutoInterface {
+  "acao"?: string;
+  "quantidade"?: number;
+  "dataValidade"?: Date;
+  "idProduto"?: number;
+  "idMembroResponsavel"?: number;
   "id"?: number;
+  usuario?: Usuario;
   produto?: Produto;
 }
 
-export class ItemCesta implements ItemCestaInterface {
+export class HistoricoProduto implements HistoricoProdutoInterface {
+  "acao": string;
   "quantidade": number;
-  "unidadeProduto": string;
-  "dataCadastro": Date;
-  "dataUltimaAtualizacao": Date;
+  "dataValidade": Date;
   "idProduto": number;
+  "idMembroResponsavel": number;
   "id": number;
+  usuario: Usuario;
   produto: Produto;
-  constructor(data?: ItemCestaInterface) {
+  constructor(data?: HistoricoProdutoInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `ItemCesta`.
+   * i.e. `HistoricoProduto`.
    */
   public static getModelName() {
-    return "ItemCesta";
+    return "HistoricoProduto";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of ItemCesta for dynamic purposes.
+  * This method creates an instance of HistoricoProduto for dynamic purposes.
   **/
-  public static factory(data: ItemCestaInterface): ItemCesta{
-    return new ItemCesta(data);
+  public static factory(data: HistoricoProdutoInterface): HistoricoProduto{
+    return new HistoricoProduto(data);
   }
   /**
   * @method getModelDefinition
@@ -50,30 +53,30 @@ export class ItemCesta implements ItemCestaInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'ItemCesta',
-      plural: 'ItemCesta',
-      path: 'ItemCesta',
+      name: 'HistoricoProduto',
+      plural: 'historicosProdutos',
+      path: 'historicosProdutos',
       idName: 'id',
       properties: {
+        "acao": {
+          name: 'acao',
+          type: 'string'
+        },
         "quantidade": {
           name: 'quantidade',
           type: 'number',
           default: 0
         },
-        "unidadeProduto": {
-          name: 'unidadeProduto',
-          type: 'string'
-        },
-        "dataCadastro": {
-          name: 'dataCadastro',
-          type: 'Date'
-        },
-        "dataUltimaAtualizacao": {
-          name: 'dataUltimaAtualizacao',
+        "dataValidade": {
+          name: 'dataValidade',
           type: 'Date'
         },
         "idProduto": {
           name: 'idProduto',
+          type: 'number'
+        },
+        "idMembroResponsavel": {
+          name: 'idMembroResponsavel',
           type: 'number'
         },
         "id": {
@@ -82,6 +85,14 @@ export class ItemCesta implements ItemCestaInterface {
         },
       },
       relations: {
+        usuario: {
+          name: 'usuario',
+          type: 'Usuario',
+          model: 'Usuario',
+          relationType: 'belongsTo',
+                  keyFrom: 'idMembroResponsavel',
+          keyTo: 'id'
+        },
         produto: {
           name: 'produto',
           type: 'Produto',

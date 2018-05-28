@@ -2,22 +2,22 @@
 
 declare var Object: any;
 export interface ProdutoInterface {
-  "nome": string;
-  "quantidade"?: number;
-  "dataValidade"?: Date;
+  "nome"?: string;
+  "totalDisponivel"?: number;
+  "totalEntrada"?: number;
+  "totalSaida"?: number;
+  "dataValidadeAntiga"?: Date;
   "dataCadastro": Date;
-  "idTipoProduto"?: number;
-  "acao": string;
   "id"?: number;
 }
 
 export class Produto implements ProdutoInterface {
   "nome": string;
-  "quantidade": number;
-  "dataValidade": Date;
+  "totalDisponivel": number;
+  "totalEntrada": number;
+  "totalSaida": number;
+  "dataValidadeAntiga": Date;
   "dataCadastro": Date;
-  "idTipoProduto": number;
-  "acao": string;
   "id": number;
   constructor(data?: ProdutoInterface) {
     Object.assign(this, data);
@@ -56,25 +56,25 @@ export class Produto implements ProdutoInterface {
           name: 'nome',
           type: 'string'
         },
-        "quantidade": {
-          name: 'quantidade',
+        "totalDisponivel": {
+          name: 'totalDisponivel',
           type: 'number'
         },
-        "dataValidade": {
-          name: 'dataValidade',
+        "totalEntrada": {
+          name: 'totalEntrada',
+          type: 'number'
+        },
+        "totalSaida": {
+          name: 'totalSaida',
+          type: 'number'
+        },
+        "dataValidadeAntiga": {
+          name: 'dataValidadeAntiga',
           type: 'Date'
         },
         "dataCadastro": {
           name: 'dataCadastro',
           type: 'Date'
-        },
-        "idTipoProduto": {
-          name: 'idTipoProduto',
-          type: 'number'
-        },
-        "acao": {
-          name: 'acao',
-          type: 'string'
         },
         "id": {
           name: 'id',

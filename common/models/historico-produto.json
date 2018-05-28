@@ -1,35 +1,39 @@
 {
-  "name": "ItemCesta",
+  "name": "HistoricoProduto",
+  "plural": "historicosProdutos",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "acao": {
+      "type": "string"
+    },
     "quantidade": {
       "type": "number",
-      "required": true,
       "default": 0
     },
-    "unidadeProduto": {
-      "type": "string",
-      "required": true
-    },
-    "dataCadastro": {
-      "type": "date",
-      "required": true
-    },
-    "dataUltimaAtualizacao": {
-      "type": "date",
-      "required": true
+    "dataValidade": {
+      "type": "date"
     },
     "idProduto": {
-      "type": "number",
-      "required": true
+      "type": "number"
+    },
+    "idMembroResponsavel": {
+      "type": "number"
     }
   },
   "validations": [],
   "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "idMembroResponsavel",
+      "options": {
+        "nestRemoting": true
+      }
+    },
     "produto": {
       "type": "belongsTo",
       "model": "Produto",

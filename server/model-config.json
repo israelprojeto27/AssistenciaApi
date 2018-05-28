@@ -55,15 +55,15 @@
     "dataSource": "assistenciaDS",
     "public": true
   },
-  "TipoProduto": {
-    "dataSource": "assistenciaDS",
-    "public": true
-  },
   "Celula": {
     "dataSource": "assistenciaDS",
     "public": true
   },
   "ItemPessoaCesta": {
+    "dataSource": "assistenciaDS",
+    "public": true
+  },
+  "HistoricoProduto": {
     "dataSource": "assistenciaDS",
     "public": true
   }

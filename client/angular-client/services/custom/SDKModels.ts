@@ -6,9 +6,9 @@ import { Produto } from '../../models/Produto';
 import { PessoaRecebimentoCesta } from '../../models/PessoaRecebimentoCesta';
 import { ItemCesta } from '../../models/ItemCesta';
 import { Financeiro } from '../../models/Financeiro';
-import { TipoProduto } from '../../models/TipoProduto';
 import { Celula } from '../../models/Celula';
 import { ItemPessoaCesta } from '../../models/ItemPessoaCesta';
+import { HistoricoProduto } from '../../models/HistoricoProduto';
 
 export interface Models { [name: string]: any }
 
@@ -22,9 +22,9 @@ export class SDKModels {
     PessoaRecebimentoCesta: PessoaRecebimentoCesta,
     ItemCesta: ItemCesta,
     Financeiro: Financeiro,
-    TipoProduto: TipoProduto,
     Celula: Celula,
     ItemPessoaCesta: ItemPessoaCesta,
+    HistoricoProduto: HistoricoProduto,
     
   };
 

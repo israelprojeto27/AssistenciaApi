@@ -8,24 +8,22 @@
   },
   "properties": {
     "nome": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "quantidade": {
+    "totalDisponivel": {
       "type": "number"
     },
-    "dataValidade": {
+    "totalEntrada": {
+      "type": "number"
+    },
+    "totalSaida": {
+      "type": "number"
+    },
+    "dataValidadeAntiga": {
       "type": "date"
     },
     "dataCadastro": {
       "type": "date",
-      "required": true
-    },
-    "idTipoProduto": {
-      "type": "number"
-    },
-    "acao": {
-      "type": "string",
       "required": true
     }
   },

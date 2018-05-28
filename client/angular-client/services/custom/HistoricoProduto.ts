@@ -10,16 +10,17 @@ import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { ItemCesta } from '../../models/ItemCesta';
+import { HistoricoProduto } from '../../models/HistoricoProduto';
 import { SocketConnection } from '../../sockets/socket.connections';
+import { Usuario } from '../../models/Usuario';
 import { Produto } from '../../models/Produto';
 
 
 /**
- * Api services for the `ItemCesta` model.
+ * Api services for the `HistoricoProduto` model.
  */
 @Injectable()
-export class ItemCestaApi extends BaseLoopBackApi {
+export class HistoricoProdutoApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -32,9 +33,9 @@ export class ItemCestaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation produto.
+   * Fetches belongsTo relation usuario.
    *
-   * @param {any} id ItemCesta id
+   * @param {any} id HistoricoProduto id
    *
    * @param {boolean} refresh 
    *
@@ -44,13 +45,43 @@ export class ItemCestaApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ItemCesta` object.)
+   * This usually means the response is a `HistoricoProduto` object.)
+   * </em>
+   */
+  public getUsuario(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/historicosProdutos/:id/usuario";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation produto.
+   *
+   * @param {any} id HistoricoProduto id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `HistoricoProduto` object.)
    * </em>
    */
   public getProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ItemCesta/:id/produto";
+    "/historicosProdutos/:id/produto";
     let _routeParams: any = {
       id: id
     };
@@ -74,13 +105,13 @@ export class ItemCestaApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ItemCesta` object.)
+   * This usually means the response is a `HistoricoProduto` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ItemCesta";
+    "/historicosProdutos";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -93,7 +124,7 @@ export class ItemCestaApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id ItemCesta id
+   * @param {any} id HistoricoProduto id
    *
    * @param {object} data Request data.
    *
@@ -105,13 +136,13 @@ export class ItemCestaApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ItemCesta` object.)
+   * This usually means the response is a `HistoricoProduto` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ItemCesta/:id";
+    "/historicosProdutos/:id";
     let _routeParams: any = {
       id: id
     };
@@ -124,10 +155,40 @@ export class ItemCestaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation celula.
+   *
+   * @param {any} id HistoricoProduto id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `HistoricoProduto` object.)
+   * </em>
+   */
+  public getUsuarioCelula(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/historicosProdutos/:id/usuario/celula";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
-   * i.e. `ItemCesta`.
+   * i.e. `HistoricoProduto`.
    */
   public getModelName() {
-    return "ItemCesta";
+    return "HistoricoProduto";
   }
 }

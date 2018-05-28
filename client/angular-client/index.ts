@@ -54,9 +54,9 @@ import { ProdutoApi } from './services/custom/Produto';
 import { PessoaRecebimentoCestaApi } from './services/custom/PessoaRecebimentoCesta';
 import { ItemCestaApi } from './services/custom/ItemCesta';
 import { FinanceiroApi } from './services/custom/Financeiro';
-import { TipoProdutoApi } from './services/custom/TipoProduto';
 import { CelulaApi } from './services/custom/Celula';
 import { ItemPessoaCestaApi } from './services/custom/ItemPessoaCesta';
+import { HistoricoProdutoApi } from './services/custom/HistoricoProduto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -93,9 +93,9 @@ export class SDKBrowserModule {
         PessoaRecebimentoCestaApi,
         ItemCestaApi,
         FinanceiroApi,
-        TipoProdutoApi,
         CelulaApi,
         ItemPessoaCestaApi,
+        HistoricoProdutoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }
