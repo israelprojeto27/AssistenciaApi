@@ -36,35 +36,35 @@
     "public": false
   },
   "Usuario": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "Produto": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "PessoaRecebimentoCesta": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "ItemCesta": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "Financeiro": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "Celula": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "ItemPessoaCesta": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   },
   "HistoricoProduto": {
-    "dataSource": "assistenciaDS",
+    "dataSource": "db",
     "public": true
   }
 }
