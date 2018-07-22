@@ -1,11 +1,11 @@
 {
   "db": {
     "name": "db",
-    "host": "${ASSISTENCIAMOB_DB_HOST}",
-    "port": "${ASSISTENCIAMOB_DB_PORT}",
-    "database": "${ASSISTENCIAMOB_DB_NAME}",
-    "password": "${ASSISTENCIAMOB_DB_PASSWORD}",
-    "user": "${ASSISTENCIAMOB_DB_USER}",
+    "host": "${DB_HOST}",
+    "port": "${DB_PORT}",
+    "database": "${DB_NAME}",
+    "password": "${DB_PASSWORD}",
+    "user": "${DB_USER}",
     "connector": "mysql"
   }
 }
