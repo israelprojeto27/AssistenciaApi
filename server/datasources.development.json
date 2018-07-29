@@ -1,11 +1,11 @@
 {
   "db": {
     "name": "db",
-    "host": "${DB_HOST}",
-    "port": "${DB_PORT}",
-    "database": "${DB_NAME}",
-    "password": "${DB_PASSWORD}",
-    "user": "${DB_USER}",
+    "host": "173.194.108.176",
+    "port": "3306",
+    "database": "assistencia",
+    "password": "admin",
+    "user": "root",
     "connector": "mysql"
   }
 }
