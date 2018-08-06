@@ -1,0 +1,33 @@
+{
+  "name": "FinanceiroConsolidado",
+  "plural": "financeirosConsolidados",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "totalDisponivel": {
+      "type": "number",
+      "default": 0
+    },
+    "totalEntrada": {
+      "type": "number",
+      "default": 0
+    },
+    "totalSaida": {
+      "type": "number",
+      "default": 0
+    },
+    "dataUltimaEntrada": {
+      "type": "date"
+    },
+    "dataUltimaSaida": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Cesta",
+  "plural": "cestas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "acao": {
+      "type": "string",
+      "required": true
+    },
+    "dataAcao": {
+      "type": "date",
+      "required": true
+    },
+    "quantidade": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "motivo": {
+      "type": "string",
+      "required": false
+    },
+    "idMembroResponsavel": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "idMembroResponsavel",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

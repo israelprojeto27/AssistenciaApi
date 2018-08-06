@@ -1,6 +1,6 @@
 {
-  "name": "Celula",
-  "plural": "celulas",
+  "name": "UnidadeProduto",
+  "plural": "unidadesProdutos",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,13 +11,12 @@
       "type": "number",
       "required": true
     },
-    "status": {
-      "type": "string",
-      "required": true
-    },
     "nome": {
       "type": "string",
       "required": true
+    },
+    "descricao": {
+      "type": "string"
     }
   },
   "validations": [],

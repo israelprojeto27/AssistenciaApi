@@ -66,5 +66,17 @@
   "HistoricoProduto": {
     "dataSource": "db",
     "public": true
+  },
+   "UnidadeProduto": {
+      "dataSource": "db",
+      "public": true
+    },
+    "Cesta": {
+      "dataSource": "db",
+      "public": true
+    },
+    "FinanceiroConsolidado": {
+      "dataSource": "db",
+      "public": true
   }
 }
